@@ -3,27 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iOS Interactive AU</title>
+    <title>iOS 19 Interactive AU</title>
+    <!-- Import Font SF Pro khas Apple -->
+    <link rel="stylesheet" href="https://cdnfonts.com">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="iphone-container">
-        <!-- iOS Status Bar -->
+        <!-- iOS Status Bar Aktif -->
         <div class="status-bar">
-            <span class="status-time">03:21</span>
+            <span class="status-time">03:29</span>
             <div class="dynamic-island"></div>
             <div class="status-icons">
-                <span>📶</span>
-                <span>🔋</span>
+                <span class="icon-lte">5G</span>
+                <span class="icon-sig">📶</span>
+                <span class="icon-bat">🪫</span>
             </div>
         </div>
         
-        <!-- 1. LOCK SCREEN -->
+        <!-- ================= 1. LOCK SCREEN ================= -->
         <div class="screen active" id="lock-screen">
             <div class="time-container">
                 <div class="date">Jumat, 30 Oktober</div>
-                <div class="time">03:21</div>
+                <div class="time">03:29</div>
             </div>
 
             <div class="noti-center">
@@ -38,47 +41,40 @@
             </div>
 
             <div class="unlock-bar" onclick="bukaHalaman('home-screen')">
-                🔒 Klik untuk Buka Kunci
+                <span class="chevron"></span> Geser ke atas untuk membuka
             </div>
         </div>
 
-        <!-- 2. HOME SCREEN -->
+        <!-- ================= 2. HOME SCREEN ================= -->
         <div class="screen" id="home-screen">
             <div class="app-grid">
+                <!-- Aplikasi WhatsApp dengan Badge Merah Bulat -->
                 <div class="app-icon-wrapper" onclick="bukaHalaman('whatsapp-screen')">
-                    <div class="app-icon" style="background: #25D366;">💬
+                    <div class="app-icon wa-bg">
+                        <svg viewBox="0 0 24 24"><path fill="white" d="M12.004 2C6.51 2 2.014 6.5 2.014 12c0 2.15.68 4.15 1.85 5.81L2.034 22l4.31-1.13c1.6.93 3.46 1.47 5.43 1.47 5.49 0 9.99-4.5 9.99-10S17.494 2 12.004 2zm5.71 13.25c-.24.68-1.2 1.25-1.92 1.34-.6.08-1.39.12-3.83-.89-3.11-1.29-5.09-4.47-5.25-4.68-.16-.21-1.27-1.7-1.27-3.24 0-1.54.8-2.3 1.09-2.6.24-.25.64-.37.95-.37.1 0 .2 0 .28.01.25.01.37.03.53.42.2.49.69 1.68.75 1.8.06.12.1.27.02.44-.08.16-.17.27-.3.43-.13.15-.28.34-.4.49-.13.15-.27.31-.11.59.16.27.7 1.15 1.5 1.86.8.71 1.48.93 1.76 1.07.28.14.44.12.6-.06.17-.19.72-.84.91-1.13.2-.28.39-.24.66-.14.27.1 1.73.82 2.03.97.3.15.5.22.57.35.07.12.07.71-.17 1.39z"/></svg>
                         <div class="badge">1</div>
                     </div>
                     <div class="app-label">WhatsApp</div>
                 </div>
-                <div class="app-icon-wrapper">
-                    <div class="app-icon" style="background: #007AFF;">📷</div>
-                    <div class="app-label">Kamera</div>
-                </div>
-                <div class="app-icon-wrapper">
-                    <div class="app-icon" style="background: #FF9500;">🧡</div>
-                    <div class="app-label">Galeri</div>
-                </div>
-                <div class="app-icon-wrapper">
-                    <div class="app-icon" style="background: #5856D6;">⚙️</div>
-                    <div class="app-label">Settings</div>
-                </div>
             </div>
 
+            <!-- Dock Transparan Blur khas iOS -->
             <div class="dock">
-                <div class="app-icon shadow-mini" style="background: #34C759;">📞</div>
-                <div class="app-icon shadow-mini" style="background: #5AC8FA;">🌐</div>
-                <div class="app-icon shadow-mini" style="background: #5856D6;">🎵</div>
-                <div class="app-icon shadow-mini" style="background: #25D366;" onclick="bukaHalaman('whatsapp-screen')">💬</div>
+                <div class="app-icon" style="background: linear-gradient(#52f37b, #05c629);">📞</div>
+                <div class="app-icon" style="background: linear-gradient(#52c6f3, #0588c6);">🌐</div>
+                <div class="app-icon" style="background: linear-gradient(#b852f3, #7205c6);">🎵</div>
+                <div class="app-icon wa-bg" onclick="bukaHalaman('whatsapp-screen')">
+                    <svg viewBox="0 0 24 24"><path fill="white" d="M12.004 2C6.51 2 2.014 6.5 2.014 12c0 2.15.68 4.15 1.85 5.81L2.034 22l4.31-1.13c1.6.93 3.46 1.47 5.43 1.47 5.49 0 9.99-4.5 9.99-10S17.494 2 12.004 2zm5.71 13.25c-.24.68-1.2 1.25-1.92 1.34-.6.08-1.39.12-3.83-.89-3.11-1.29-5.09-4.47-5.25-4.68-.16-.21-1.27-1.7-1.27-3.24 0-1.54.8-2.3 1.09-2.6.24-.25.64-.37.95-.37.1 0 .2 0 .28.01.25.01.37.03.53.42.2.49.69 1.68.75 1.8.06.12.1.27.02.44-.08.16-.17.27-.3.43-.13.15-.28.34-.4.49-.13.15-.27.31-.11.59.16.27.7 1.15 1.5 1.86.8.71 1.48.93 1.76 1.07.28.14.44.12.6-.06.17-.19.72-.84.91-1.13.2-.28.39-.24.66-.14.27.1 1.73.82 2.03.97.3.15.5.22.57.35.07.12.07.71-.17 1.39z"/></svg>
+                </div>
             </div>
         </div>
 
-        <!-- 3. WHATSAPP LIST CHAT -->
+        <!-- ================= 3. WHATSAPP LIST CHAT ================= -->
         <div class="screen" id="whatsapp-screen">
             <div class="wa-header">
                 <span class="wa-action">Edit</span>
                 <span class="wa-center-title">Chat</span>
-                <span class="wa-action">📝</span>
+                <span class="wa-action-icon">📝</span>
             </div>
             
             <div class="chat-list">
@@ -87,40 +83,54 @@
                     <div class="chat-details">
                         <div class="chat-top">
                             <span class="chat-name">Arkan</span>
-                            <span class="chat-time">03:21</span>
+                            <span class="chat-time">03:29</span>
                         </div>
                         <div class="chat-preview">Kamu di mana? Jangan bikin panik. Pintu apartemen kamu kebuka...</div>
                     </div>
+                    <span class="chevron-right">›</span>
                 </div>
+            </div>
+
+            <!-- iOS WhatsApp Tab Bar Menu Bawah -->
+            <div class="wa-tab-bar">
+                <div class="tab-item"><span>🔵</span><label>Updates</label></div>
+                <div class="tab-item"><span>📞</span><label>Calls</label></div>
+                <div class="tab-item"><span>👥</span><label>Communities</label></div>
+                <div class="tab-item active-tab"><span>💬</span><label>Chats</label></div>
+                <div class="tab-item"><span>⚙️</span><label>Settings</label></div>
             </div>
         </div>
 
-        <!-- 4. WHATSAPP CHAT ROOM -->
+        <!-- ================= 4. WHATSAPP CHAT ROOM ================= -->
         <div class="screen" id="chat-room-screen">
             <div class="chat-room-header">
-                <button class="back-btn" onclick="bukaHalaman('whatsapp-screen')">◀ Chat</button>
+                <button class="back-btn" onclick="bukaHalaman('whatsapp-screen')">
+                    <svg viewBox="0 0 24 24" width="24" height="24"><path fill="#00a884" d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
+                    <span class="back-text">1</span>
+                </button>
                 <div class="avatar mini-avatar">👦🏻</div>
-                <div>
+                <div class="user-info">
                     <div class="chat-name-header">Arkan</div>
                     <div class="chat-status">online</div>
                 </div>
+                <div class="wa-room-icons"><span>📹</span><span>📞</span></div>
             </div>
 
             <div class="message-area" id="chat-messages">
                 <div class="bubble incoming">Kamu di mana? Jangan bikin panik. Pintu apartemen kamu kebuka...</div>
             </div>
 
+            <!-- Panel Pilihan Interaktif Pembaca -->
             <div class="story-choices" id="choices-area">
                 <button class="choice-btn" onclick="pilihOpsi(1)">💬 Balas: "Aku sembunyi di lemari, Ar!"</button>
                 <button class="choice-btn" onclick="pilihOpsi(2)">🏃 Balas: "Telepon Polisi sekarang, ada orang!"</button>
             </div>
         </div>
 
-        <!-- Home Bar Bawah -->
+        <!-- Garis Home Indicator Apple -->
         <div class="home-indicator" onclick="bukaHalaman('home-screen')"></div>
     </div>
 
     <script src="script.js"></script>
 </body>
-  </html>
-  
+</html>
