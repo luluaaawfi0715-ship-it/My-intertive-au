@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iOS Interactive AU</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="iphone-container">
+        <!-- iOS Status Bar -->
+        <div class="status-bar">
+            <span class="status-time">03:21</span>
+            <div class="dynamic-island"></div>
+            <div class="status-icons">
+                <span>📶</span>
+                <span>🔋</span>
+            </div>
+        </div>
+        
+        <!-- 1. LOCK SCREEN -->
+        <div class="screen active" id="lock-screen">
+            <div class="time-container">
+                <div class="date">Jumat, 30 Oktober</div>
+                <div class="time">03:21</div>
+            </div>
+
+            <div class="noti-center">
+                <div class="noti-card" onclick="bukaHalaman('whatsapp-screen')">
+                    <div class="noti-header">
+                        <div class="noti-icon"></div>
+                        <span>WHATSAPP • BARU SAJA</span>
+                    </div>
+                    <div class="noti-title">Arkan</div>
+                    <div class="noti-body">Kamu di mana? Jangan bikin panik. Pintu apartemen kamu...</div>
+                </div>
+            </div>
+
+            <div class="unlock-bar" onclick="bukaHalaman('home-screen')">
+                🔒 Klik untuk Buka Kunci
+            </div>
+        </div>
+
+        <!-- 2. HOME SCREEN -->
+        <div class="screen" id="home-screen">
+            <div class="app-grid">
+                <div class="app-icon-wrapper" onclick="bukaHalaman('whatsapp-screen')">
+                    <div class="app-icon" style="background: #25D366;">💬
+                        <div class="badge">1</div>
+                    </div>
+                    <div class="app-label">WhatsApp</div>
+                </div>
+                <div class="app-icon-wrapper">
+                    <div class="app-icon" style="background: #007AFF;">📷</div>
+                    <div class="app-label">Kamera</div>
+                </div>
+                <div class="app-icon-wrapper">
+                    <div class="app-icon" style="background: #FF9500;">🧡</div>
+                    <div class="app-label">Galeri</div>
+                </div>
+                <div class="app-icon-wrapper">
+                    <div class="app-icon" style="background: #5856D6;">⚙️</div>
+                    <div class="app-label">Settings</div>
+                </div>
+            </div>
+
+            <div class="dock">
+                <div class="app-icon shadow-mini" style="background: #34C759;">📞</div>
+                <div class="app-icon shadow-mini" style="background: #5AC8FA;">🌐</div>
+                <div class="app-icon shadow-mini" style="background: #5856D6;">🎵</div>
+                <div class="app-icon shadow-mini" style="background: #25D366;" onclick="bukaHalaman('whatsapp-screen')">💬</div>
+            </div>
+        </div>
+
+        <!-- 3. WHATSAPP LIST CHAT -->
+        <div class="screen" id="whatsapp-screen">
+            <div class="wa-header">
+                <span class="wa-action">Edit</span>
+                <span class="wa-center-title">Chat</span>
+                <span class="wa-action">📝</span>
+            </div>
+            
+            <div class="chat-list">
+                <div class="chat-item" onclick="bukaHalaman('chat-room-screen')">
+                    <div class="avatar">👦🏻</div>
+                    <div class="chat-details">
+                        <div class="chat-top">
+                            <span class="chat-name">Arkan</span>
+                            <span class="chat-time">03:21</span>
+                        </div>
+                        <div class="chat-preview">Kamu di mana? Jangan bikin panik. Pintu apartemen kamu kebuka...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. WHATSAPP CHAT ROOM -->
+        <div class="screen" id="chat-room-screen">
+            <div class="chat-room-header">
+                <button class="back-btn" onclick="bukaHalaman('whatsapp-screen')">◀ Chat</button>
+                <div class="avatar mini-avatar">👦🏻</div>
+                <div>
+                    <div class="chat-name-header">Arkan</div>
+                    <div class="chat-status">online</div>
+                </div>
+            </div>
+
+            <div class="message-area" id="chat-messages">
+                <div class="bubble incoming">Kamu di mana? Jangan bikin panik. Pintu apartemen kamu kebuka...</div>
+            </div>
+
+            <div class="story-choices" id="choices-area">
+                <button class="choice-btn" onclick="pilihOpsi(1)">💬 Balas: "Aku sembunyi di lemari, Ar!"</button>
+                <button class="choice-btn" onclick="pilihOpsi(2)">🏃 Balas: "Telepon Polisi sekarang, ada orang!"</button>
+            </div>
+        </div>
+
+        <!-- Home Bar Bawah -->
+        <div class="home-indicator" onclick="bukaHalaman('home-screen')"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+  </html>
+  
